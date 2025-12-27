@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  techshop-api:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-28T01:36:05.875243336+07:00"
+    description: A Helm chart for Kubernetes
+    digest: 260571633a298c7608943e585577c54969d5f27393fc1fd53e7906cdae4d5e3b
+    name: techshop-api
+    type: application
+    urls:
+    - https://nvkq2022.github.io/helm-charts/techshop-api-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-28T01:36:05.874551269+07:00"
+    description: A Helm chart for Kubernetes
+    digest: 01fa1d05f35614d6f4235ac9d6190871313f2232901dc805cf82d8a277bf1ac9
+    name: techshop-api
+    type: application
+    urls:
+    - https://nvkq2022.github.io/helm-charts/techshop-api-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-12-28T01:36:05.873257202+07:00"
