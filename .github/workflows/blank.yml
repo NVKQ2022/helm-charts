@@ -3,7 +3,7 @@ name: Update Helm Chart Index
 on:
   push:
     paths:
-      - 'helm-charts/*.tgz'  # Trigger the workflow when any .tgz file is pushed to the helm-charts directory
+      - '*.tgz'  # Trigger the workflow when any .tgz file is pushed to the helm-charts directory
   workflow_dispatch:
 
 env:
