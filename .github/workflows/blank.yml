@@ -1,0 +1,37 @@
+name: Update Helm Chart Index
+
+on:
+  push:
+    paths:
+      - 'helm-charts/*.tgz'  # Trigger the workflow when any .tgz file is pushed to the helm-charts directory
+  workflow_dispatch:
+
+env:
+  USER_NAME: nvkq2022
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Set up Helm
+      uses: azure/setup-helm@v1
+
+    - name: Regenerate index.yaml
+      run: |
+        # Ensure the working directory is the one where the charts are located
+        cd helm-charts
+        
+        # Regenerate the index.yaml file with the new chart
+        helm repo index ./ --url https://${{ env.USER_NAME }}.github.io/helm-charts/
+        
+    - name: Commit and push updated index.yaml
+      uses: EndBug/add-and-commit@v7
+      with:
+        author_name: "GitHub Actions"
+        author_email: "github-actions@github.com"
+        message: "Update index.yaml after adding a new chart"
+        add: "helm-charts/index.yaml"
+        push: true
